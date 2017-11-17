@@ -9,7 +9,11 @@ class LibrariesController < ApplicationController
 
   def create
     @library = Library.create(library_params)
-    redirect_to libraries_path  
+    redirect_to libraries_path
+  end
+
+  def show
+    @library = Library.find(params[:id])
   end
 
   private
